@@ -3,6 +3,10 @@
 [![Member project of .NET Core Community](https://img.shields.io/badge/member%20project%20of-NCC-9e20c9.svg)](https://github.com/dotnetcore)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org/)
 
+<a href="https://www.jetbrains.com/?from=Util" target="_blank">
+    <img src="https://github.com/dotnetcore/Home/blob/master/img/jetbrains.svg" title="JetBrains" />
+</a>
+
 Util是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
 
 ## 引子
@@ -115,7 +119,7 @@ Util应用框架面向的是*架构初学者*，但不是.net初学者。
 
 1. 开发工具： 
   - Visual Studio 2017
-  - Resharper
+  - [Resharper](https://www.jetbrains.com/resharper/)
 
 2. 数据库
   - Sql Server
@@ -133,8 +137,9 @@ Util应用框架面向的是*架构初学者*，但不是.net初学者。
   - Ubuntu Server
   - Docker
 
-6. 开发平台
-  - .Net Core 2.1 preview2
+6. SDK及Runtime
+  - 当前SDK 64位版本：[Sdk v2.2.104](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.104-windows-x64-installer)，开发机器安装
+  - 当前Runtime 64位版本：[Runtime v2.2.2](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer)，服务器安装
 
 7. 单元测试及模拟框架
   - XUnit
@@ -160,70 +165,74 @@ Util应用框架面向的是*架构初学者*，但不是.net初学者。
   - [NLog](http://nlog-project.org/)
   - [Exceptionless](https://github.com/exceptionless)
 
-14. Id生成器
+14. 缓存
+  - [EasyCaching](https://github.com/dotnetcore/EasyCaching)
+
+15. 事件总线
+  - [CAP](https://github.com/dotnetcore/CAP)
+
+16. Id生成器
   - [ECommon.Utilities.ObjectId](https://github.com/tangxuehua/ecommon/blob/master/src/ECommon/Utilities/ObjectId.cs)
 
-15. RSA加密算法
+17. RSA加密算法
   - [DotnetCore.RSA](https://github.com/stulzq/DotnetCore.RSA/blob/master/DotnetCore.RSA/RSAHelper.cs)
 
-16. 二维码操作
+18. 二维码操作
   - [QRCoder](https://github.com/codebude/QRCoder/)
 
-17. 短信操作
+19. 短信操作
   - [Luosimao](https://luosimao.com/)
 
-18. Queryable动态扩展
+20. Queryable动态扩展
   - [System.Linq.Dynamic.Core](https://github.com/StefH/System.Linq.Dynamic.Core)
 
-19. Web框架
+21. Web框架
   - [Asp.Net Core](https://docs.microsoft.com/zh-cn/aspnet/core/)
 
-20. UI
+22. 定时任务调度框架
+  - [Quartz.Net](https://www.quartz-scheduler.net/)
+
+23. UI
   - 脚本语言
     - [TypeScript](https://www.tslang.cn)
   - 脚本框架
-    - [Angular 6](https://angular.cn/)
+    - [Angular 7](https://angular.cn/)
   - Css预处理器
-    - [Sass](http://www.sass-lang.com) 
+    - [Less](http://lesscss.org)
+    - [Sass](http://www.sass-lang.com)
   - 组件库
     - [Angular Material](https://material.angular.io/)
     - [Angular Flex-Layout](https://github.com/angular/flex-layout)
     - [PrimeNg](https://www.primefaces.org/primeng)
-    - [Ngx-Admin](http://akveo.com/ngx-admin)
-    - [Vmware-Clarity](http://clarity.design)
-    - [阿里-Ng-Zorro](https://ng.ant.design)
-    - [Ng-Alain](http://ng-alain.com/)
-    - [饿了么-Element](https://element-angular.faas.ele.me/)
-    - [中兴-Jigsaw](https://github.com/rdkmaster/jigsaw)
-    - [Angular-Material-App](https://github.com/stbui/angular-material-app)
+    - [Ng-Zorro](https://ng.ant.design)
+    - [Ng-Alain](https://ng-alain.github.io/ng-alain/)
   - 编辑器
     - [CKEditor](https://ckeditor.com/ckeditor-4/)
     - [Ng2-CKEditor](https://github.com/chymz/ng2-ckeditor)    
-    - [TinyMce](https://www.tinymce.com/)
-    - [TinyMce-Angular](https://github.com/tinymce/tinymce-angular)
   - 脚本库
     - [Lodash](https://lodash.com/)
     - [Moment](http://momentjs.cn/)
   - 图标
     - [Material Design Icon](https://material.io/icons/)
     - [Font Awesome Icon](http://fontawesome.io/)
+    - [Ant Design Icon](https://ant.design/components/icon/)    
   - 图表
-    - [Echarts](http://echarts.baidu.com/examples/)
-    - [Echarts-Ng2](https://github.com/twp0217/echarts-ng2)
+    - [Viser](https://viserjs.github.io/)
+    - [Antv-G2](https://antv.alipay.com/zh-cn/g2/3.x/index.html)
   - 打包
     - Webpack
   - 测试
     - Karma
     - Jasmine
 
-21. 权限
+24. 权限
     - [Asp Net Core Identity](https://docs.microsoft.com/zh-cn/aspnet/core/security/authentication/identity?tabs=visual-studio%2Caspnetcore2x)
     - [Identity Server](https://identityserver4.readthedocs.io/en/release/)
 
-22. 代码生成器
+25. 代码生成器
   - CodeSmith 6.5
 
-23. 参考应用框架
+26. 参考应用框架
   - [ABP](http://aspnetboilerplate.com/)
   - [Nop](https://www.nopcommerce.com) 
     - Nop是一个开源商城，封装了大量实用的基础代码。
@@ -272,7 +281,7 @@ Util应用框架面向的是*架构初学者*，但不是.net初学者。
 
 ## 核心开发团队
 
-[何镇汐](https://github.com/utilcore) [程序喵](https://github.com/program-meow "胡雲鹏") [玄冰](https://github.com/jianxuanbing "简楚恩") [Richfiter](https://github.com/xingwen1987 "邢文")
+[何镇汐](https://github.com/utilcore) [玄冰](https://github.com/jianxuanbing "简楚恩") [青成](https://github.com/nilpower "张青成")  [程序喵](https://github.com/program-meow "胡雲鹏") [Richfiter](https://github.com/xingwen1987 "邢文")
 
 应用框架的开发工作量很大，个人显得力不从心，我也迫切希望找到一些志同道合的同学共同完成，同时也欢迎你的加入。
 
@@ -363,6 +372,7 @@ https://github.com/dotnetcore/util/
 
 - 2017年7月21日，将.net core升级到2.0 Preview 2。
 - 2018年6月12日，将angular和material升级到6.x。
+- 2018年12月30日，将.net core升级到2.2。
 
 ## 更新计划
 
@@ -391,6 +401,10 @@ https://github.com/dotnetcore/util/
   - 短信操作 -基于LuoSiMao [已发布]
   - 加密操作 [已发布]
   - Url参数生成器 [已发布]
+  - 调度器 - 基于Quartz.Net [已发布]
+  - 缓存 - 基于EasyCaching [已发布]
+  - 消息事件总线 - 基于Cap [已发布]
+  - 防重复提交过滤器
 - 分层架构基类及组件
   - 实体基类 [已发布]
   - 聚合根基类 [已发布]
@@ -417,7 +431,7 @@ https://github.com/dotnetcore/util/
   - 树型控制器基类 [已发布]
   - Sql生成器 [已发布]
   - Sql查询对象 [已发布]
-- UI组件 - 支持HtmlHelper和TagHelper两种方式
+- Material UI组件 - 支持HtmlHelper和TagHelper两种方式
   - 组件基类  [已发布]
   - TagHelper基类  [已发布]
   - 图标 - 集成了Material Design和Font Awesome图标集 [已发布]
@@ -443,10 +457,9 @@ https://github.com/dotnetcore/util/
   - 树型表格 - 基于PrimeNg TreeTable组件改造 [已发布]
   - 颜色选择器 - 基于PrimeNg ColorPicker组件 [已发布]
   - 富文本框编辑器 - 基于CKEditor组件 [已发布]
-  - 文件上传 - 基于PrimeNg 文件上传组件 [待启动]
   
 - 权限 [开发中]
-  - Identity集成 [开发中]
+  - Identity集成 [待启动]
 - 公共业务基类
   - 地址 [已发布]
 - 支付操作
@@ -456,8 +469,10 @@ https://github.com/dotnetcore/util/
   - 支付宝手机网站支付 [已发布]
   - 支付宝回调 [已发布]
   - 支付宝APP支付 [已发布]
-  - 微信APP支付 [已发布]
   - 微信支付回调 [已发布]
+  - 微信APP支付 [已发布]
+  - 微信小程序支付 [已发布]
+  - 微信JsApi支付 [已发布]
 
 ## 更新列表
 
@@ -523,3 +538,7 @@ https://github.com/dotnetcore/util/
 - 2018年8月30日，更新了Sql生成器和SqlQuery查询对象。
 - 2018年9月14日，更新了WebApi跟踪日志过滤器。
 - 2018年10月19日，更新了支付宝二维码支付。
+- 2018年11月16日，更新了微信小程序支付。
+- 2018年11月18日，更新了基于Quartz.Net的调度器(Util.Schedulers/Quartz)及控制台示例。
+- 2019年1月15日，更新了基于EasyCaching的缓存操作(Util.Caches/EasyCaching)，更新了基于Cap的消息事件总线(Util.Events/Cap)，更新了防重复提交过滤器(Util.Webs/Filters/AntiDuplicateRequestAttribute)。
+- 2019年2月21日，更新微信JsApi支付。

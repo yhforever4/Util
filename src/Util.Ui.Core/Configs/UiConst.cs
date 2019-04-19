@@ -491,5 +491,121 @@
         /// 最大值错误消息
         /// </summary>
         public const string MaxMessage = "max-message";
+        /// <summary>
+        /// 默认项文本
+        /// </summary>
+        public const string DefaultOptionText = "default-option-text";
+        /// <summary>
+        /// 最小行数
+        /// </summary>
+        public const string MinRows = "min-rows";
+        /// <summary>
+        /// 最大行数
+        /// </summary>
+        public const string MaxRows = "max-rows";
+        /// <summary>
+        /// 主题
+        /// </summary>
+        public const string Theme = "theme";
+        /// <summary>
+        /// 形状
+        /// </summary>
+        public const string Shape = "shape";
+        /// <summary>
+        /// 加载状态
+        /// </summary>
+        public const string Loading = "loading";
+        /// <summary>
+        /// 块
+        /// </summary>
+        public const string Block = "block";
+        /// <summary>
+        /// 幽灵
+        /// </summary>
+        public const string Ghost = "ghost";
+        /// <summary>
+        /// 排序变更事件
+        /// </summary>
+        public const string OnSortChange = "on-sort-change";
+        /// <summary>
+        /// 前端分页
+        /// </summary>
+        public const string FrontPage = "front-page";
+        /// <summary>
+        /// 是否显示大小选择
+        /// </summary>
+        public const string ShowSizeChanger = "show-size-changer";
+        /// <summary>
+        /// 分页大小变更事件
+        /// </summary>
+        public const string OnPageSizeChange = "on-page-size-change";
+        /// <summary>
+        /// 页索引变更事件
+        /// </summary>
+        public const string OnPageIndexChange = "on-page-index-change";
+        /// <summary>
+        /// 截断
+        /// </summary>
+        public const string Truncate = "truncate";
+        /// <summary>
+        /// 按钮文本
+        /// </summary>
+        public const string ButtonText = "button-text";
+        /// <summary>
+        /// 按钮图标
+        /// </summary>
+        public const string ButtonIcon = "button-icon";
+        /// <summary>
+        /// 验证表单
+        /// </summary>
+        public const string ValidateForm = "validate-form";
+        /// <summary>
+        /// 接受
+        /// </summary>
+        public const string Accept = "accept";
+        /// <summary>
+        /// 文件类型
+        /// </summary>
+        public const string FileType = "file-type";
+        /// <summary>
+        /// 接受图片
+        /// </summary>
+        public const string AcceptImage = "accept-image";
+        /// <summary>
+        /// 接受文档
+        /// </summary>
+        public const string AcceptDocument = "accept-document";
+        /// <summary>
+        /// 图片类型
+        /// </summary>
+        public const string ImageTypes = "image-types";
+        /// <summary>
+        /// 文档类型
+        /// </summary>
+        public const string DocumentTypes = "document-types";
+        /// <summary>
+        /// 目录
+        /// </summary>
+        public const string Directory = "directory";
+        /// <summary>
+        /// 数据
+        /// </summary>
+        public const string Data = "data";
+        /// <summary>
+        /// 上传前事件
+        /// </summary>
+        public const string OnBeforeUpload = "on-before-upload";
+        /// <summary>
+        /// 过滤器
+        /// </summary>
+        public const string Filter = "filter";
+        /// <summary>
+        /// 限制
+        /// </summary>
+        public const string Limit = "limit";
+        /// <summary>
+        /// 文件列表
+        /// </summary>
+        public const string FileList = "file-list";
     }
 }

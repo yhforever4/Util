@@ -2,28 +2,26 @@
 using Dapper;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Util.Datas.Dapper.Configs;
 using Util.Datas.Dapper.Handlers;
 using Util.Datas.Dapper.MySql;
 using Util.Datas.Dapper.PgSql;
 using Util.Datas.Dapper.SqlServer;
 using Util.Datas.Enums;
-using Util.Datas.Matedatas;
 using Util.Datas.Sql;
-using Util.Datas.Sql.Queries;
-using Util.Datas.Sql.Queries.Builders.Abstractions;
+using Util.Datas.Sql.Configs;
+using Util.Datas.Sql.Matedatas;
 
 namespace Util.Datas.Dapper {
     /// <summary>
     /// 服务扩展
     /// </summary>
-    public static class Extensions {
+    public static partial class Extensions {
         /// <summary>
         /// 注册Sql查询服务
         /// </summary>
         /// <param name="services">服务集合</param>
         /// <param name="action">Sql查询配置</param>
-        public static IServiceCollection AddSqlQuery( this IServiceCollection services, Action<SqlQueryConfig> action = null ) {
+        public static IServiceCollection AddSqlQuery( this IServiceCollection services, Action<SqlOptions> action = null ) {
             return AddSqlQuery( services, action, null, null );
         }
 
@@ -33,7 +31,7 @@ namespace Util.Datas.Dapper {
         /// <typeparam name="TDatabase">IDatabase实现类型，提供数据库连接</typeparam>
         /// <param name="services">服务集合</param>
         /// <param name="action">Sql查询配置</param>
-        public static IServiceCollection AddSqlQuery<TDatabase>( this IServiceCollection services, Action<SqlQueryConfig> action = null )
+        public static IServiceCollection AddSqlQuery<TDatabase>( this IServiceCollection services, Action<SqlOptions> action = null )
             where TDatabase : class, IDatabase {
             return AddSqlQuery( services, action, typeof( TDatabase ), null );
         }
@@ -45,7 +43,7 @@ namespace Util.Datas.Dapper {
         /// <typeparam name="TEntityMatedata">IEntityMatedata实现类型,提供实体元数据解析</typeparam>
         /// <param name="services">服务集合</param>
         /// <param name="action">Sql查询配置</param>
-        public static IServiceCollection AddSqlQuery<TDatabase, TEntityMatedata>( this IServiceCollection services, Action<SqlQueryConfig> action = null )
+        public static IServiceCollection AddSqlQuery<TDatabase, TEntityMatedata>( this IServiceCollection services, Action<SqlOptions> action = null )
             where TDatabase : class, IDatabase
             where TEntityMatedata : class, IEntityMatedata {
             return AddSqlQuery( services, action, typeof( TDatabase ), typeof( TEntityMatedata ) );
@@ -54,16 +52,20 @@ namespace Util.Datas.Dapper {
         /// <summary>
         /// 注册Sql查询服务
         /// </summary>
-        private static IServiceCollection AddSqlQuery( IServiceCollection services, Action<SqlQueryConfig> action, Type database, Type entityMatedata ) {
+        private static IServiceCollection AddSqlQuery( IServiceCollection services, Action<SqlOptions> action, Type database, Type entityMatedata ) {
+            var config = new SqlOptions();
+            if ( action != null ) {
+                action.Invoke( config );
+                services.Configure( action );
+            }
+            if( entityMatedata != null )
+                services.TryAddScoped( typeof( IEntityMatedata ), t => t.GetService( entityMatedata ) );
             if( database != null ) {
                 services.TryAddScoped( database );
                 services.TryAddScoped( typeof( IDatabase ), t => t.GetService( database ) );
             }
             services.TryAddScoped<ISqlQuery, SqlQuery>();
-            if( entityMatedata != null )
-                services.TryAddScoped( typeof( IEntityMatedata ), t => t.GetService( entityMatedata ) );
-            var config = new SqlQueryConfig();
-            action?.Invoke( config );
+            services.TryAddScoped<ITableDatabase, DefaultTableDatabase>();
             AddSqlBuilder( services, config );
             RegisterTypeHandlers();
             return services;
@@ -72,7 +74,7 @@ namespace Util.Datas.Dapper {
         /// <summary>
         /// 配置Sql生成器
         /// </summary>
-        private static void AddSqlBuilder( IServiceCollection services, SqlQueryConfig config ) {
+        private static void AddSqlBuilder( IServiceCollection services, SqlOptions config ) {
             switch( config.DatabaseType ) {
                 case DatabaseType.SqlServer:
                     services.TryAddScoped<ISqlBuilder, SqlServerBuilder>();
